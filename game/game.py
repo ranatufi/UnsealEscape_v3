@@ -2,6 +2,7 @@ import pygame
 from game.constant import SCREEN_WIDTH, SCREEN_HEIGHT, TITLE_NAME, FPS, BACKGROUND_COLOR
 from game.path import CharacterPath
 from game.audio import AudioManager
+from game.font import FontManager
 from game.image import ImageManager
 from game.state import StateManager
 
@@ -21,6 +22,7 @@ class GameManager:
         pygame.display.set_icon(icon)
 
         self.audio_manager = AudioManager()
+        self.font_manager = FontManager()
         self.state_manager = StateManager(self)
         self.clock = pygame.time.Clock()
 

@@ -2,7 +2,7 @@ import pygame
 from abc import ABC, abstractmethod
 from enum import Enum, auto
 from game.constant import SCREEN_WIDTH, SCREEN_HEIGHT, TEXT_COLOR
-from game.path import ImagePath
+from game.path import FontPath, ImagePath
 
 class GameState(Enum):
     TITLE = auto()
@@ -88,7 +88,8 @@ class TitleState(State):
     
     def enter(self):
         self.title_image = self.game.image_manager.image(ImagePath.BACKGROUND, "title.png", (SCREEN_WIDTH, SCREEN_HEIGHT))
-        self.title_font = pygame.font.SysFont("Georgia", 70, bold=True)
+        #self.title_font = self.game.font_manager.font(FontPath.KOWAIFONT, "ふぉんとうは怖い明朝体.otf", 70)
+        self.title_font = self.game.font_manager.font(FontPath.ORADANO, "OradanoGSRR.ttf", 70)
         self.play_surface = self.title_font.render("Play", True, TEXT_COLOR)
         self.play_rect = self.play_surface.get_rect(center=(SCREEN_WIDTH // 2, 400))
     

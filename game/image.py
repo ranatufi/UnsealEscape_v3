@@ -1,14 +1,16 @@
 import pygame
 from enum import Enum
-from pathlib import Path
+
+ImageKey = tuple[Enum, str]
+ScaledKey = tuple[ImageKey, tuple[int, int]]
 
 class ImageManager:
     def __init__(self):
-        self.images: dict[tuple[str, str], pygame.Surface | None] = {}
-        self.scaled_images: dict[tuple[tuple[str, str], tuple[int, int]], pygame.Surface | None] = {}
-
+        self.images: dict[ImageKey, pygame.Surface | None] = {}
+        self.scaled_images: dict[ScaledKey, pygame.Surface | None] = {}
+    
     def image(self, path: Enum, filename: str, size: tuple[int, int] | None = None) -> pygame.Surface | None:
-        image_key = (str(path), filename)
+        image_key = (path, filename)
         if image_key not in self.images:
             target_path = path.value / filename
             try:

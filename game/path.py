@@ -21,6 +21,10 @@ class AudioPath(Enum):
     BGM = AUDIO_DIR / "bgm"
     SE = AUDIO_DIR / "se"
 
+class FontPath(Enum):
+    KOWAIFONT = FONT_DIR / "kowaiFont"
+    ORADANO = FONT_DIR / "OradanoGSRR2018"
+
 class ImagePath(Enum):
     BACKGROUND = IMAGE_DIR / "background"
     MATERIAL = IMAGE_DIR / "material"

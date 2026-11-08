@@ -2,6 +2,8 @@
     "ignoreWords":[
         "RIRI","riri",
         "TEKI", "teki",
+        "KOWAIFONT", "kowai",
+        "ORADANO", "OradanoGSRR",
         "MEIPASS",
         "smoothscale", "blit",
         "MOUSEBUTTONDOWN", "MOUSEBUTTONUP", "MOUSEMOTION",
