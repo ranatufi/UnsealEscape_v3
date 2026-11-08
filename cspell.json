@@ -3,5 +3,7 @@
         "RIRI","riri",
         "TEKI", "teki",
         "MEIPASS",
+        "smoothscale", "blit",
+        "MOUSEBUTTONDOWN", "MOUSEBUTTONUP", "MOUSEMOTION",
     ]
 }
