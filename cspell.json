@@ -4,8 +4,9 @@
         "TEKI", "teki",
         "KOWAIFONT", "kowai",
         "ORADANO", "OradanoGSRR",
+        "GENKAI", "Genkai", "Mincho",
         "MEIPASS",
-        "smoothscale", "blit",
+        "smoothscale", "blit", "collidepoint",
         "MOUSEBUTTONDOWN", "MOUSEBUTTONUP", "MOUSEMOTION",
     ]
 }

@@ -5,6 +5,10 @@ from game.audio import AudioManager
 from game.font import FontManager
 from game.image import ImageManager
 from game.state import StateManager
+from game.exploration.enemy_manager import EnemyManager
+from game.exploration.map import MapManager
+from game.exploration.player import PlayerManager
+from game.state import GameState #本番では消す
 
 class GameManager:
     def __init__(self):
@@ -17,13 +21,15 @@ class GameManager:
         self.surface = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
 
         self.image_manager = ImageManager()
-
         icon = self.image_manager.image(CharacterPath.RIRI, "riri_mini.png")
         pygame.display.set_icon(icon)
-
         self.audio_manager = AudioManager()
         self.font_manager = FontManager()
-        self.state_manager = StateManager(self)
+
+        self.enemy_manager = EnemyManager(self)
+        self.map_manager = MapManager(self)
+        self.player_manager = PlayerManager(self)
+        self.state_manager = StateManager(self, )
         self.clock = pygame.time.Clock()
 
     def toggle_fullscreen(self):

@@ -16,7 +16,18 @@
 定数：大文字スネークケース  
 フォルダ：できるだけ一単語、キャメルケース  
 ##### 変数
-基本：できるだけ一単語、スネークケース
-bool：先頭にis_、has_などがあるスネークケース
+基本：できるだけ一単語、スネークケース  
+bool：先頭にis_、has_などがあるスネークケース  
 ### 補足事項
-.mdを改行する時は文末にスペースを2つ！
+.mdを改行する時は文末にスペースを2つ！  
+
+### ビルド
+ローカルでWindows版を作る場合：  
+```powershell
+python -m pip install -r requirements-build.txt
+pyinstaller --noconfirm --clean UnsealEscape.spec
+```
+生成先は `dist/UnsealEscape.exe` です。`asset` フォルダの中身は実行ファイルに同梱されます。  
+
+GitHub ActionsでWindows版とmacOS版を作る場合は、GitHubの **Actions** から **Build UnsealEscape** を選び、**Run workflow** を実行します。`v*` 形式のタグをpushした場合もビルドします。  
+完了後、Actionsの実行ページにあるArtifactsから、Windows版またはmacOS版（Apple Silicon / Intel）をダウンロードできます。  
